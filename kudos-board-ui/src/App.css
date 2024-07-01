@@ -1,0 +1,25 @@
+html, body {
+    height: 100%; 
+    /* entire height is used */
+    margin: 0;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+
+  .Content {
+    flex: 1;
+  }
+  
+
+  .Footer {
+    text-align: center;
+    padding: 20px;
+    background-color: grey;
+    margin-top: auto;
+  }
+  
