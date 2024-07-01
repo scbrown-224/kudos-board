@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
     res.send("Hello from the backend -- You are currently at the / route");
   });
 
-//add product routes here
+//add board routes here
 app.use("/boards", boardRoutes);
 
 app.listen(port, () => {
