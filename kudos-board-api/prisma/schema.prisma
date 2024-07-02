@@ -18,7 +18,7 @@ model Board {
   image     String
   title     String
   category  String
-  card     Card[] // Correct plural form and relation
+  cards     Card[] 
 }
 
 model Card {

@@ -4,6 +4,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 const boardRoutes = require("../routes/boardRoutes");
+const cardRoutes = require('../routes/cardRoutes')
 
 
 // Middleware
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 //add board routes here
 app.use("/boards", boardRoutes);
+app.use('/cards', cardRoutes);
 
 app.listen(port, () => {
     console.log(`Server is up and running on PORT: ${port}`);

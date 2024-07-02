@@ -47,11 +47,11 @@ const getBoardById = async (req, res) => {
     }
   };
 
-  //Function to update a car
+  //Function to update a board
 const updateBoard = async (req, res) => {
     try {
       const updatedBoard = await boardModel.updateBoard(req.params.board_id, req.body);
-      if (updateBoard) {
+      if (updatedBoard) {
         res.status(200).json(updateBoard);
       } else {
         res.status(404).json({ error: "board not found" });
@@ -65,8 +65,8 @@ const updateBoard = async (req, res) => {
 const deleteBoard = async (req, res) => {
     try {
       const deletedBoard = await boardModel.deleteBoard(req.params.board_id);
-      if (deleteBoard) {
-        res.status(200).json(deleteBoard);
+      if (deletedBoard) {
+        res.status(200).json(deletedBoard);
       } else {
         res.status(404).json({ error: "board not found" });
       }
