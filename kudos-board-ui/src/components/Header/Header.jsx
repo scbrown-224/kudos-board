@@ -1,11 +1,13 @@
 import { useState } from "react";
 import React from "react";
-import "/Header.css";
+import "../Header/Header.css";
+
+
 const Header = () => {
   return (
-      <div className="Header">
-
-      </div>
+      <header className="Header">
+        <h1>header</h1>
+      </header>
   );
 };
 export default Header;
