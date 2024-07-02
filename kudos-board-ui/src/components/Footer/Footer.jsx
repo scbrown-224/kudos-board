@@ -1,11 +1,11 @@
 import { useState } from "react";
 import React from "react";
-import "./Footer.css";
+import "../Footer/Footer.css";
 const Footer = () => {
   return (
-      <div className="Footer">
+      <footer className="Footer">
 
-      </div>
+      </footer>
   );
 };
 export default Footer;
