@@ -5,6 +5,8 @@ import Header from "./components/Header/Header.jsx"
 import Footer from "./components/Footer/Footer.jsx";
 import FilterBar from "./components/FilterBar/FilterBar.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
+import BoardModal from "./components/BoardModal/BoardModal.jsx";
+import CreateBoard from "./components/CreateBoard/CreateBoard.jsx";
 
 function App() {
 //set the active category filter to nothing
@@ -17,6 +19,8 @@ const [activeCategory, setActiveCategory] = useState("");
       <div className="App">
         <SearchBar/>
       <FilterBar setActiveCategory={setActiveCategory} />  {/* sets the activeCategory to the category selected */}
+
+
         hello from the app
         <Footer/>
       </div>

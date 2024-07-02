@@ -1,6 +1,26 @@
-.filter-buttons{
+.filter-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
+
+
 } 
+.filter-buttons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px #0000001a;
+    cursor: pointer;
+    transition: background-color .3s;
+
+} 
+
+.filter-buttons button:hover{
+    background-color: plum;
+}

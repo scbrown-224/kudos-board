@@ -26,11 +26,11 @@ const SearchBar = () => {
             <input
               type="text"
               name="searchInput"
-              placeholder="Search Boards ♡ ♡ ♡"
+              placeholder="Search Boards ♡ ♡ "
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button type="submit">Search</button>
+            {/* <button type="submit">Search</button> */}
           </form>
 
 
