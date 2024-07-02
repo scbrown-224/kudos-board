@@ -10,7 +10,10 @@ router.get("/:board_id", boardController.getBoardById);
 router.post("/", boardController.createBoard);
 //update board
 router.put("/:board_id", boardController.updateBoard);
-//delete a car
+//delete a board
 router.delete("/:board_id", boardController.deleteBoard);
+
+// add card to board
+router.post('/:board_id/cards', boardController.addCardtoOrder);
 
 module.exports = router;

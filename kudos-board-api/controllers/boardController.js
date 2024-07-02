@@ -75,11 +75,23 @@ const deleteBoard = async (req, res) => {
     }
   };
 
+  const addCardtoOrder = async (req, res) => {
+    try {
+        const card = await boardModel.addCardtoOrder(parseInt(req.params.board_id), req.body);
+        res.json(card);
+    } catch (error) {
+        console.error('Error adding card to order:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+
 module.exports = {
     getAllBoards,
     getBoardById, 
     createBoard, 
     updateBoard, 
-    deleteBoard
+    deleteBoard, 
+    addCardtoOrder
 };
 

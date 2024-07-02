@@ -32,6 +32,18 @@ const updateBoard = async (board_id, boardData) => {
 const deleteBoard = async (board_id) => {
     return prisma.board.delete({ where: { board_id: parseInt(board_id) } });
   };
+
+
+  const addCardtoOrder = async (board_id, cardData) => {
+    return prisma.card.create({
+        data: {
+            ...cardData,
+            board: {
+                connect: { board_id: board_id }
+            }
+        }
+    });
+};
   
 
 module.exports = {
@@ -39,5 +51,6 @@ module.exports = {
     getBoardById, 
     createBoard, 
     updateBoard, 
-    deleteBoard
+    deleteBoard, 
+    addCardtoOrder
 };
