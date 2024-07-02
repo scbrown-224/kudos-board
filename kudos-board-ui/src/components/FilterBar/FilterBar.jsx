@@ -1,5 +1,5 @@
 import React from "react";
-import '../FilterBar/FilterBar'
+import '../FilterBar/FilterBar.css'
 const FilterBoard = () => {
 
   const handleButtonClick = (category) => {setActiveCategory(category);};
