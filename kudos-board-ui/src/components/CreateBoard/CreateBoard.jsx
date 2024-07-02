@@ -1,9 +1,9 @@
 import { useState } from "react";
 import React from "react";
-import "./CreateBoard.css"; // Importing the CSS file for CreateBoard component
+import "./CreateCard.css"; // Importing the CSS file for CreateCard component
 
 // Functional component to create a new board or card
-const CreateBoard = ({ onBoardCreated, addCard }) => {
+const CreateCard = ({ onBoardCreated, addCard }) => {
 	const [title, setTitle] = useState(""); // State for title input
 	const [description, setDescription] = useState(""); // State for description input
 	const [category, setCategory] = useState(""); // State for category input
@@ -28,7 +28,7 @@ const CreateBoard = ({ onBoardCreated, addCard }) => {
 	};
 
 	return (
-		<form className="CreateBoard" onSubmit={handleSubmit}>
+		<form className="CreateCard" onSubmit={handleSubmit}>
 			<input
 				type="text"
 				value={title}
@@ -74,4 +74,4 @@ const CreateBoard = ({ onBoardCreated, addCard }) => {
 	);
 };
 
-export default CreateBoard; // Exporting the CreateBoard component as default
+export default CreateCard; // Exporting the CreateCard component as default
