@@ -1,18 +1,33 @@
-/* CardModel.css */
-.card {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.CardModal {
+	border: 1px solid #ccc;
+	padding: 20px;
+	margin: 10px 0;
+	border-radius: 5px;
 }
 
-.card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.CardModal h3 {
+	margin: 0;
+	font-size: 1.5em;
 }
 
-.card p {
-    font-size: 14px;
-    color: #555;
+.CardModal p {
+	margin: 5px 0;
+	color: #666;
+}
+
+.CardModal img {
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+.CardModal button {
+	margin-right: 10px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.CardModal button:hover {
+	opacity: 0.8;
 }

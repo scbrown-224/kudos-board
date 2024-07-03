@@ -2,13 +2,18 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const getAllBoards = async (filter) => {
-	return prisma.board.findMany({
-		// where: filter,
+	try {
+	  const boards = await prisma.board.findMany({
+		where: filter, // Use the filter directly here
 		include: {
-			cards: true, // Include associated cards
+		  cards: true, // Include associated cards
 		},
-	});
-};
+	  });
+	  return boards;
+	} catch (error) {
+	  throw new Error(`Error fetching boards: ${error.message}`);
+	}
+  };
 
 // get boards by id
 const getBoardById = async (board_id) => {
