@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "../FilterBar/FilterBar.css";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../FilterBar/FilterBar.css";
+
 const FilterBoard = () => {
 	const handleButtonClick = (category) => {
 		setActiveCategory(category);
@@ -21,10 +22,10 @@ const FilterBoard = () => {
 
 	const handleCelebrationButtonClick = async () => {
 		try {
-			console.log("here");
+			console.log("fetching celebration boards");
 			// Fetch all boards in the celebration category from the backend
 			const response = await axios.get(
-				"http://localhost:3000/boards?category=Celebration"
+				"http://localhost:3000/boards?category=celebration"
 			);
 			// Update the state with the fetched boards
 			setBoards(response.data);
