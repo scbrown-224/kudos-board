@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import "./CardModal.css"; // Importing the CSS file for CardModal component
+import "./Card.css"; // Importing the CSS file for CardModal component
 
 // Functional component to display individual card information
 const CardModal = ({ card, onDelete, onUpvote }) => {
