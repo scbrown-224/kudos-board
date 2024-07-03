@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CardModal from "../CardModal/CardModal";
-import CreateCard from "../CreateCard/CreateCard";
+// import Card from "../Card/Card";
 
 const Board = ({ boardId, title, category, boards, setBoards }) => {
 	const [cards, setCards] = useState([]);
@@ -31,11 +30,11 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 			<div>
 				<img src="https://picsum.photos/200/300"></img>
 				<h2>{title}</h2>
-				<div className="card-grid">
+				{/* <div className="card-grid">
 					{cards.map((card) => (
-						<CardModel key={card.card_id} card={card} />
+						<Card key={card.card_id} card={card} />
 					))}
-				</div>
+				</div> */}
 				{/* change */}
 				<h4>{category}</h4>
 				{/* <CreateCard addCard={addCard} /> */}

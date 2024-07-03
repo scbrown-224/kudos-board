@@ -6,6 +6,8 @@ import Footer from "./components/Footer/Footer.jsx";
 import FilterBar from "./components/FilterBar/FilterBar.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import BoardGrid from "./components/BoardGrid/BoardGrid.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CardGrid from "./components/CardGrid/CardGrid.jsx";
 
 function App() {
 	//set the active category filter to nothing
@@ -13,15 +15,35 @@ function App() {
 
 	return (
 		<>
-			<Header />
-			<div className="App">
-				<SearchBar />
-				<FilterBar setActiveCategory={setActiveCategory} />{" "}
-				{/* sets the activeCategory to the category selected */}
-        hello from the app
-        <BoardGrid />
-				<Footer />
-			</div>
+			<BrowserRouter>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<>
+								<Header />
+								<div className="App">
+									<SearchBar />
+									<FilterBar setActiveCategory={setActiveCategory} />{" "}
+									{/* sets the activeCategory to the category selected */}
+									hello from the app
+									<BoardGrid />
+									<Footer />
+								</div>
+							</>
+						}
+					></Route>
+					<Route
+						path="/boards/:boardId"
+						element={
+							<>
+								<h1>Cards</h1>
+								<CardGrid />
+							</>
+						}
+					></Route>
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }

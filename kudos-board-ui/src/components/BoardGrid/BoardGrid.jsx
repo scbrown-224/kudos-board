@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Board from "../Board/Board";
 import "./BoardGrid.css";
@@ -27,13 +28,15 @@ const BoardGrid = () => {
 			<div className="board-grid">
 				{boards.map((board, index) => (
 					<div key={index} className="board-item">
-						<Board
-							boardId={board.board_id}
-							title={board.title}
-							category={board.category}
-							boards={boards}
-							setBoards={setBoards}
-						/>
+						<Link to={`/boards/${board.board_id}`}>
+							<Board
+								boardId={board.board_id}
+								title={board.title}
+								category={board.category}
+								boards={boards}
+								setBoards={setBoards}
+							/>
+						</Link>
 					</div>
 				))}
 			</div>
