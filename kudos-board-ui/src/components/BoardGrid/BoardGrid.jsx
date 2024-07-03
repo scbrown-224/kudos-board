@@ -4,6 +4,10 @@
 // import Board from "../Board/Board";
 // import FilterBar from "../FilterBar/FilterBar";
 // import "./BoardGrid.css";
+// import SearchBar from "../SearchBar/SearchBar";
+
+// // import SearchBar from "./components/SearchBar/SearchBar.jsx";
+
 
 // const BoardGrid = () => {
 //   const [boards, setBoards] = useState([]);
@@ -12,7 +16,12 @@
 //   useEffect(() => {
 //     const fetchBoards = async () => {
 //       try {
-//         const url = selectedCategory ? `http://localhost:3000/boards?category=${selectedCategory}` : "http://localhost:3000/boards";
+//         const url = selectedCategory === "Recent"
+//           ? "http://localhost:3000/boards?sort=creation"
+//           : selectedCategory
+//             ? `http://localhost:3000/boards?category=${selectedCategory}`
+//             : "http://localhost:3000/boards";
+
 //         const response = await axios.get(url);
 //         setBoards(response.data);
 //       } catch (error) {
@@ -29,7 +38,7 @@
 
 //   return (
 //     <div className="board-grid-container">
-//       <h1>Boards</h1>
+// 		<SearchBar />
 //       <FilterBar handleCategoryFilter={handleCategoryFilter} />
 //       <div className="board-grid">
 //         {boards.map((board, index) => (
@@ -58,57 +67,70 @@ import axios from "axios";
 import Board from "../Board/Board";
 import FilterBar from "../FilterBar/FilterBar";
 import "./BoardGrid.css";
+import SearchBar from "../SearchBar/SearchBar";
 
 const BoardGrid = () => {
-  const [boards, setBoards] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+    const [boards, setBoards] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    const fetchBoards = async () => {
-      try {
-        const url = selectedCategory === "Recent"
-          ? "http://localhost:3000/boards?sort=creation"
-          : selectedCategory
-            ? `http://localhost:3000/boards?category=${selectedCategory}`
-            : "http://localhost:3000/boards";
+    useEffect(() => {
+        const fetchBoards = async () => {
+            try {
+                const url = selectedCategory === "Recent"
+                    ? "http://localhost:3000/boards?sort=creation"
+                    : selectedCategory
+                        ? `http://localhost:3000/boards?category=${selectedCategory}`
+                        : "http://localhost:3000/boards";
 
-        const response = await axios.get(url);
-        setBoards(response.data);
-      } catch (error) {
-        console.error("Error fetching boards:", error);
-      }
+                const response = await axios.get(url);
+                setBoards(response.data);
+            } catch (error) {
+                console.error("Error fetching boards:", error);
+            }
+        };
+
+        fetchBoards();
+    }, [selectedCategory]); // Fetch boards whenever selectedCategory changes
+
+    const handleCategoryFilter = (category) => {
+        setSelectedCategory(category);
     };
 
-    fetchBoards();
-  }, [selectedCategory]); // Fetch boards whenever selectedCategory changes
+    const handleSearchSubmit = async (searchInput) => {
+        try {
+            const response = await axios.get(`http://localhost:3000/boards?title=${searchInput}`);
+            setBoards(response.data);
+        } catch (error) {
+            console.error("Error fetching search results:", error);
+        }
+    };
 
-  const handleCategoryFilter = (category) => {
-    setSelectedCategory(category);
-  };
-
-  return (
-    <div className="board-grid-container">
-      <h1>Boards</h1>
-      <FilterBar handleCategoryFilter={handleCategoryFilter} />
-      <div className="board-grid">
-        {boards.map((board, index) => (
-          <div key={index} className="board-item">
-            <Link to={`/boards/${board.board_id}`}>
-              <Board
-                boardId={board.board_id}
-                title={board.title}
-                category={board.category}
-                boards={boards}
-                setBoards={setBoards}
-              />
-            </Link>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div className="board-grid-container">
+            <SearchBar handleSearchSubmit={handleSearchSubmit} />
+            <FilterBar handleCategoryFilter={handleCategoryFilter} />
+            <div className="board-grid">
+                {boards.map((board, index) => (
+                    <div key={index} className="board-item">
+                        <Link to={`/boards/${board.board_id}`}>
+                            <Board
+                                boardId={board.board_id}
+                                title={board.title}
+                                category={board.category}
+                                boards={boards}
+                                setBoards={setBoards}
+                            />
+                        </Link>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default BoardGrid;
+
+
 
 
