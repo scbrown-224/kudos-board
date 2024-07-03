@@ -25,7 +25,7 @@ function App() {
 								<Header />
 								<div className="App">
 									<SearchBar />
-									<FilterBar setActiveCategory={setActiveCategory} />{" "}
+									{/* <FilterBar setActiveCategory={setActiveCategory} />{" "} */}
 									{/* sets the activeCategory to the category selected */}
 									<CreateCard type="board" />
 									<BoardGrid />
