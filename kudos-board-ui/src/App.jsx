@@ -29,6 +29,7 @@ function App() {
 									{/* sets the activeCategory to the category selected */}
 									hello from the app
 									<CreateCard type="board" />
+									<CreateCard type="card" />
 									<BoardGrid />
 									<Footer />
 								</div>
