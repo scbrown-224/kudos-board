@@ -14,6 +14,6 @@ router.put("/:board_id", boardController.updateBoard);
 router.delete("/:board_id", boardController.deleteBoard);
 
 // add card to board
-router.post('/:board_id/cards', boardController.addCardtoOrder);
+router.post("/:board_id/cards", boardController.addCardtoBoard);
 
 module.exports = router;
