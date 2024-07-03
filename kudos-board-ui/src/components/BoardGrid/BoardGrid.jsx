@@ -67,7 +67,6 @@ import axios from "axios";
 import Board from "../Board/Board";
 import FilterBar from "../FilterBar/FilterBar";
 import "./BoardGrid.css";
-import SearchBar from "../SearchBar/SearchBar";
 
 const BoardGrid = () => {
     const [boards, setBoards] = useState([]);
@@ -97,9 +96,11 @@ const BoardGrid = () => {
         setSelectedCategory(category);
     };
 
-    const handleSearchSubmit = async (searchInput) => {
+    const handleSearch = async (value) => {
+        setSearchTerm(value);
+
         try {
-            const response = await axios.get(`http://localhost:3000/boards?title=${searchInput}`);
+            const response = await axios.get(`http://localhost:3000/boards?title=${value}`);
             setBoards(response.data);
         } catch (error) {
             console.error("Error fetching search results:", error);
@@ -108,8 +109,15 @@ const BoardGrid = () => {
 
     return (
         <div className="board-grid-container">
-            <SearchBar handleSearchSubmit={handleSearchSubmit} />
             <FilterBar handleCategoryFilter={handleCategoryFilter} />
+            <div className="search-bar">
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    placeholder="Search Boards ♡ ♡ ♡"
+                />
+            </div>
             <div className="board-grid">
                 {boards.map((board, index) => (
                     <div key={index} className="board-item">
@@ -130,6 +138,7 @@ const BoardGrid = () => {
 };
 
 export default BoardGrid;
+
 
 
 
