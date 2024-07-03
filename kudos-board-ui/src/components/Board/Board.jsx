@@ -1,20 +1,33 @@
-import { useState } from "react";
-import React from "react";
-import "./Board.css"; // Importing the CSS file for Board component
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import CardModal from "../CardModal/CardModal";
+import CreateCard from "../CreateCard/CreateCard";
 
-// Functional component to display individual board information
-const Board = ({ board, onClick }) => {
+const Board = ({ boardId, title }) => {
+	const [cards, setCards] = useState([]);
+
+	const addCard = async (cardData) => {
+		try {
+			const response = await axios.post(`/boards/${boardId}/cards`, cardData);
+			setCards([...cards, response.data]);
+		} catch (error) {
+			console.error("Error adding card:", error);
+		}
+  };
+  
 	return (
-		// Wrapper div for board component, clickable to trigger onClick event
-		<div className="Board" onClick={onClick}>
-			{/* Display the title of the board */}
-			<h2>{board.title}</h2>
-			{/* Display the category of the board */}
-			<p>{board.category}</p>
-			{/* Conditionally display the author if it exists */}
-			{board.author && <p>By {board.author}</p>}
+		<div>
+			<div>
+				<h2>{title}</h2>
+				<div className="card-grid">
+						{cards.map((card) => (
+							<CardModel key={card.card_id} card={card} />
+						))}
+					</div>
+					<CreateCard addCard={addCard} />
+			</div>
 		</div>
 	);
 };
 
-export default Board; // Exporting the Board component as default
+export default Board;

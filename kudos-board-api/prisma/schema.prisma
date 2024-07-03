@@ -19,6 +19,7 @@ model Board {
   title     String
   category  String
   cards     Card[] 
+  created_at DateTime  @default(now()) @db.Timestamptz()
 }
 
 model Card {

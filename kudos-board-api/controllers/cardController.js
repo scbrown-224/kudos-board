@@ -67,8 +67,8 @@ const deleteCard = async (req, res) => {
 
 module.exports = {
     getAllCards,
-    getCardById, 
-    createCard, 
+    getCardById,
+    createCard,
     updateCard, 
-    deleteCard
+    deleteCard,
 };
