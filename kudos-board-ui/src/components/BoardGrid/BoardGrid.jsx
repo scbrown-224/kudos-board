@@ -29,7 +29,7 @@
 
 //   return (
 //     <div className="board-grid-container">
-      
+//       <h1>Boards</h1>
 //       <FilterBar handleCategoryFilter={handleCategoryFilter} />
 //       <div className="board-grid">
 //         {boards.map((board, index) => (
@@ -52,8 +52,6 @@
 
 // export default BoardGrid;
 
-// ^^working for category button
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -68,7 +66,12 @@ const BoardGrid = () => {
   useEffect(() => {
     const fetchBoards = async () => {
       try {
-        const url = selectedCategory ? `http://localhost:3000/boards?category=${selectedCategory}` : "http://localhost:3000/boards";
+        const url = selectedCategory === "Recent"
+          ? "http://localhost:3000/boards?sort=creation"
+          : selectedCategory
+            ? `http://localhost:3000/boards?category=${selectedCategory}`
+            : "http://localhost:3000/boards";
+
         const response = await axios.get(url);
         setBoards(response.data);
       } catch (error) {
@@ -107,4 +110,5 @@ const BoardGrid = () => {
 };
 
 export default BoardGrid;
+
 
