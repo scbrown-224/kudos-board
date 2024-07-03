@@ -79,13 +79,13 @@ const deleteBoard = async (req, res) => {
 
 const addCardtoBoard = async (req, res) => {
 	try {
-		const card = await boardModel.addCardtoOrder(
+		const card = await boardModel.addCardtoBoard(
 			parseInt(req.params.board_id),
 			req.body
 		);
 		res.json(card);
 	} catch (error) {
-		console.error("Error adding card to order:", error);
+		console.error("Error adding card to board:", error);
 		res.status(500).json({ error: "Internal server error" });
 	}
 };

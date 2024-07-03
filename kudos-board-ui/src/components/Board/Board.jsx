@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import Card from "../Card/Card";
+import Card from "../Card/Card";
 
 const Board = ({ boardId, title, category, boards, setBoards }) => {
 	const [cards, setCards] = useState([]);
@@ -26,8 +26,8 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 	};
 
 	return (
+			<div className= "boardCard" >
 		<div>
-			<div>
 				<img src="https://picsum.photos/200/300"></img>
 				<h2>{title}</h2>
 				{/* <div className="card-grid">
@@ -39,9 +39,9 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 				<h4>{category}</h4>
 				{/* <CreateCard addCard={addCard} /> */}
 
-				<button onClick={() => handleButtonClick("View Board")}>
+				{/* <button onClick={() => handleButtonClick("View Board")}>
 					View Board
-				</button>
+				</button> */}
 				<button onClick={handleDeleteButtonClick}>Delete Board</button>
 			</div>
 		</div>

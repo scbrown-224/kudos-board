@@ -34,7 +34,8 @@ const CardGrid = () => {
 							title={card.title}
 							description={card.description}
 							cards={cards}
-							setCards={setCards}
+              setCards={setCards}
+              
 						/>
 					</div>
 				))}

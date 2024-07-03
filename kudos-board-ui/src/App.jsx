@@ -8,6 +8,7 @@ import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import BoardGrid from "./components/BoardGrid/BoardGrid.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CardGrid from "./components/CardGrid/CardGrid.jsx";
+import CreateCard from "./components/CreateCard/CreateCard.jsx";
 
 function App() {
 	//set the active category filter to nothing
@@ -27,6 +28,7 @@ function App() {
 									<FilterBar setActiveCategory={setActiveCategory} />{" "}
 									{/* sets the activeCategory to the category selected */}
 									hello from the app
+									<CreateCard type="board" />
 									<BoardGrid />
 									<Footer />
 								</div>
@@ -38,6 +40,7 @@ function App() {
 						element={
 							<>
 								<h1>Cards</h1>
+								<CreateCard type="card" />
 								<CardGrid />
 							</>
 						}
