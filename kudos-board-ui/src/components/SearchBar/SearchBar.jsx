@@ -81,12 +81,14 @@ const SearchBar = ({ handleSearchSubmit }) => {
                     type="text"
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
-                    placeholder="Search Boards ♡ ♡ ♡"
+                    placeholder="Search Boards "
                 />
-                {/* <button type="submit">Search</button> */}
+                <button type="submit">Search</button>
             </form>
         </div>
     );
 };
 
 export default SearchBar;
+
+// sorting directly in boardgrid rn
