@@ -1,9 +1,10 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
-const getAllBoards = async (filter) => {
+const getAllBoards = async (filter = {}, orderBy = []) => {
     return prisma.board.findMany({
         where: filter,
+        orderBy: orderBy,
         include: {
             cards: true, // Include associated cards
         },
