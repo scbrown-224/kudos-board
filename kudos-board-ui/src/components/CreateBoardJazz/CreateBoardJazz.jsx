@@ -59,7 +59,6 @@ const CreateBoardJazz = ({ type, onSubmit }) => {
                   placeholder="Description"
                   required
                 />
-                {type === "board" && (
                   <input
                     type="text"
                     value={category}
