@@ -54,7 +54,7 @@ const SearchBar = () => {
           ))}
         </div>
 
-
+{/* lowkey should the sorting logic go in app? */}
 
       </div>
 
