@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../FilterBar/FilterBar.css";
 import axios from "axios";
 const FilterBoard = () => {
+	
 	const handleButtonClick = (category) => {
 		setActiveCategory(category);
 	};

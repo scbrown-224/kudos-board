@@ -31,7 +31,7 @@ const CreateCard = ({ type, onSubmit }) => {
   
 	return (
 	  <>
-		<button onClick={handleOpenModal}>
+		<button className= "create-buttons"onClick={handleOpenModal}>
 		  {type === "board" ? "Create Board" : "Create Card"}
 		</button>
 		{isOpen && (
@@ -66,7 +66,14 @@ const CreateCard = ({ type, onSubmit }) => {
 					  value={category}
 					  onChange={(e) => setCategory(e.target.value)}
 					  required
-					/>
+					  className="styled-input"
+					  >
+					  <option value="" disabled>Select a category</option>
+					  <option value="Recent">Recent</option>
+					  <option value="Celebration">Celebration</option>
+					  <option value="Thank You">Thank You</option>
+					  <option value="Inspiration">Inspiration</option>
+					</select>
 				  )}
 				  <input
 					type="text"

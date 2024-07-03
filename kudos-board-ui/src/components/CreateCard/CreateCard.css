@@ -39,6 +39,7 @@
   .CreateCard {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   
   .CreateCard input {
@@ -47,15 +48,33 @@
     font-size: 16px;
   }
   
-  .CreateCard button {
+  .create-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px #0000001a;
     cursor: pointer;
+    transition: background-color .3s;
+
+
+    
   }
   
   .CreateCard button:hover {
     background-color: #0056b3;
   }
+
+  .styled-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
