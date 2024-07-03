@@ -5,7 +5,7 @@ const boardModel = require('../models/boardModel');
 
 const getAllBoards = async (req, res) => {
   console.log("Received request to get all boards"); // Log for debugging
-  const { category, sort } = req.query;
+  const { category, sort, title } = req.query;
   let filter = {};
   let orderBy = [];
 
@@ -20,6 +20,14 @@ const getAllBoards = async (req, res) => {
       if (sort === 'creation') {
           orderBy.push({ created_at: 'desc' });
       }
+  }
+
+  // for sorting by title
+  if(title) {
+    filter.title = {
+      contains: title, 
+      mode: 'insensitive'
+    }
   }
 
   try {
