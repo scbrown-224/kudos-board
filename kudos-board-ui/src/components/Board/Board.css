@@ -1,22 +1,35 @@
-.Board {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Board.css */
+.board-container {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: #f9f9f9;
 }
 
-.Board:hover {
-  background-color: #f0f0f0;
+
+
+.board-container h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
 }
 
-.Board h2 {
-  margin: 0;
-  font-size: 1.5em;
+.card-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	border: 5px;
 }
-
-.Board p {
-  margin: 5px 0;
-  color: #666;
+.boardCard{
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+}
+.card {
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #fff;
+	width: 200px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
