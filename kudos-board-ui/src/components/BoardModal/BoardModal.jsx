@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import Card from "../CardModal/CardModal"; // Importing the Card component
-import CreateCard from "../CreateCard/CreateCard"; // Importing the CreateCard component
+import CreateCard from "../CreateBoard/CreateBoard"; // Importing the CreateCard component
 import "./BoardModal.css"; // Importing the CSS file for BoardModal component
 
 // Functional component to display and manage a board and its cards

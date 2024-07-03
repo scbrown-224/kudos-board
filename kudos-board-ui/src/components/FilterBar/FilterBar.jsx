@@ -1,6 +1,6 @@
 import React from "react";
 import '../FilterBar/FilterBar.css'
-const FilterBoard = () => {
+const FilterBoard = ({setActiveCategory}) => {
 
   const handleButtonClick = (category) => {setActiveCategory(category);};
   return (
