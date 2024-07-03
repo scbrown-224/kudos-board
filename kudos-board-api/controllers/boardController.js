@@ -4,22 +4,22 @@ const getAllBoards = async (req, res) => {
 	console.log("Received request to get all boards"); // Log for debugging
 	const { category } = req.query;
 	let filter = {};
-  
+
 	if (category) {
-	  filter.category = {
-		equals: category,
-		mode: "insensitive",
-	  };
+		filter.category = {
+			equals: category,
+			mode: "insensitive",
+		};
 	}
-  
+
 	try {
-	  const boards = await boardModel.getAllBoards({ where: filter });
-	  res.status(200).json(boards);
+		const boards = await boardModel.getAllBoards(filter);
+		res.status(200).json(boards);
 	} catch (error) {
-	  console.error("Error fetching boards:", error); // Log the error for debugging
-	  res.status(400).json({ error: error.message });
+		console.error("Error fetching boards:", error); // Log the error for debugging
+		res.status(400).json({ error: error.message });
 	}
-  };
+};
 
 //Function to get car by ID
 const getBoardById = async (req, res) => {
