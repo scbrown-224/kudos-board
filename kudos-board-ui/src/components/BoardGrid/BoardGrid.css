@@ -92,3 +92,20 @@
 	flex-wrap: wrap;
 	gap: 20px;
 } */
+
+.search-bar {
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+}
+
+.search-bar input {
+	width: 1000px;
+	height: auto;
+	font-size: 16px;
+	border: 1px solid #fefae0;
+	border-radius: 5px;
+}
+
+
+
