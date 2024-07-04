@@ -3,7 +3,7 @@
 
 Submitted by: **Jazlyn Jones, Sydney Brown, Roxana Cruz**
 
-Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): not deployed
 
 ### Application Features
 
