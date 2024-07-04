@@ -57,15 +57,15 @@ Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes the topics we learned prepared us somewhat. However, we were still a bit confused on where to start and how to organize and plan the large scale project. Specifically, we were just very inexperienced with github and version control, and because of that our time management skills were limited. We also did not have a strong understanding of how to connect the frontend to the backend. We also struggled with the state management on the front end to store the boards and the cards from the backend.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I think we should definetely change our approach on communication. We would have asked for someone to go step by step with us early in the process as a facilitator so that we could better set ourselves up for success. Furthermore, we will be more consistent in the structuring and naming of directories. If time permitted, we would also have added the user authentication and login features. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think the actual presentation, or public speaking aspect of the project went well. We passed on to each other with ease and were able to demonstrate our progress thus far. When we were demonstrating, we weren't able to show any boards populated with cards, but we didn't realize until the last minute. I loved the creativity Bailey, Kenneth, and Chris's group did. In the future, I'd love to have time to complete the core features with personable aspects
 
 ### Open-source libraries used
 
@@ -73,4 +73,4 @@ Add your response here
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+SHOUT OUT TO THE WHOLE FTL GANGG
