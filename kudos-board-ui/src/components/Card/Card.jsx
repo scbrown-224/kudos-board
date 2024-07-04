@@ -3,7 +3,7 @@ import React from "react";
 import "./Card.css"; // Importing the CSS file for CardModal component
 
 // Functional component to display individual card information
-const CardModal = ({ title, onDelete, onUpvote }) => {
+const CardModal = ({ card, onDelete, onUpvote }) => {
 	return (
 		<div className="CardModal">
 			<h3>{card.title}</h3>

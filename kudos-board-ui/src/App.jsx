@@ -54,6 +54,7 @@ function App() {
             element={
               <>
                 <h1>Cards</h1>
+                <CardGrid />
                 <CreateCard type="card" />
               </>
             }

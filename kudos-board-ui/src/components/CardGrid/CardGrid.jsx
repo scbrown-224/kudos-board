@@ -8,6 +8,8 @@ const CardGrid = () => {
 	const [cards, setCards] = useState([]);
 	const { boardId } = useParams();
 
+	console.log('here');
+
 	useEffect(() => {
 		const fetchCards = async () => {
 			try {
@@ -15,7 +17,7 @@ const CardGrid = () => {
 				const response = await axios.get(
 					`http://localhost:3000/boards/${boardId}`
 				);
-				console.log(response.data);
+				console.log(response.data.cards);
 				setCards(response.data.cards);
 			} catch (error) {
 				console.error("Error fetching cards:", error);
@@ -33,7 +35,7 @@ const CardGrid = () => {
 						<Card
 							title={card.title}
 							description={card.description}
-							cards={cards}
+							card={card}
               setCards={setCards}
               
 						/>

@@ -65,10 +65,26 @@ const deleteCard = async (req, res) => {
     }
   };
 
+  const getCardsByBoardId = async (req, res) => {
+    try {
+        const cards = await cardModel.getCardsByBoardId(req.params.board_id);
+        if (cards) {
+            res.status(200).json(cards);
+        }
+        else {
+            res.status(404).json({ error: "Cards not found" });
+        }
+    }
+    catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
 module.exports = {
     getAllCards,
     getCardById,
     createCard,
     updateCard, 
     deleteCard,
+    getCardsByBoardId
 };
