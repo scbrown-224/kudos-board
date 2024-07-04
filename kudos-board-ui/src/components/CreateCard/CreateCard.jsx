@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./CreateCard.css";
-
 const CreateCard = ({ type, onSubmit }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -8,11 +7,9 @@ const CreateCard = ({ type, onSubmit }) => {
   const [category, setCategory] = useState("");
   const [author, setAuthor] = useState("");
   const [gifUrl, setGifUrl] = useState("");
-
   const handleOpenModal = () => {
     setIsOpen(true);
   };
-
   const handleCloseModal = () => {
     setIsOpen(false);
     setTitle("");
@@ -21,14 +18,12 @@ const CreateCard = ({ type, onSubmit }) => {
     setAuthor("");
     setGifUrl("");
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { title, description, author, gifUrl, category };
     onSubmit(data);
     handleCloseModal();
   };
-
   return (
     <>
       <button className="create-buttons" onClick={handleOpenModal}>
@@ -93,6 +88,8 @@ const CreateCard = ({ type, onSubmit }) => {
                       placeholder="Search for a gif..."
                       className="styled-input"
                     />
+		
+               
                   </>
                 )}
                 <button type="submit" className="create-card-button">
@@ -106,5 +103,4 @@ const CreateCard = ({ type, onSubmit }) => {
     </>
   );
 };
-
 export default CreateCard;
