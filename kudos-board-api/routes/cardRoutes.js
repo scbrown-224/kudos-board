@@ -13,4 +13,7 @@ router.put("/:card_id", cardController.updateCard);
 //delete a card
 router.delete("/:card_id", cardController.deleteCard);
 
+router.get("/board/:board_id", cardController.getCardsByBoardId);
+
+
 module.exports = router;
