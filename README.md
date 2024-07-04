@@ -1,7 +1,7 @@
 # kudos-board
 ## Unit Assignment: Kudos Board
 
-Submitted by: **NAME**
+Submitted by: **Jazlyn Jones**
 
 Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
