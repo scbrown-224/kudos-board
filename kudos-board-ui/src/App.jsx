@@ -55,7 +55,6 @@ function App() {
               <>
                 <h1>Cards</h1>
                 <CreateCard type="card" />
-                <CardGrid />
               </>
             }
           ></Route>
