@@ -26,8 +26,8 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 	};
 
 	return (
-			<div className= "boardCard" >
 		<div>
+			<div className="boardCard">
 				<img src="https://picsum.photos/200/300"></img>
 				<h2>{title}</h2>
 				{/* <div className="card-grid">
@@ -42,7 +42,9 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 				{/* <button onClick={() => handleButtonClick("View Board")}>
 					View Board
 				</button> */}
-				<button onClick={handleDeleteButtonClick}>Delete Board</button>
+				<center>
+					<button onClick={handleDeleteButtonClick}>Delete Board</button>
+				</center>
 			</div>
 		</div>
 	);

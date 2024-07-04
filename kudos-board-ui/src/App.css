@@ -2,6 +2,7 @@ html, body {
     height: 100%; 
     /* entire height is used */
     margin: 0;
+    background-color: #e9edc9;
   }
 
   .App {
@@ -19,7 +20,7 @@ html, body {
   .Footer {
     text-align: center;
     padding: 20px;
-    background-color: grey;
+    background-color: #d4a373;
     margin-top: auto;
   }
   

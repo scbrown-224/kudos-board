@@ -10,7 +10,6 @@
     align-items: center;
     z-index: 1000; /* Ensure modal is on top of other content */
   }
-  
   .modal-content {
     background: white;
     padding: 20px;
@@ -19,35 +18,29 @@
     max-width: 500px;
     width: 90%;
   }
-  
   .modal-header {
     display: flex;
     justify-content: flex-end;
   }
-  
   .modal-close {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
   }
-  
   .modal-body {
     margin-top: 20px;
   }
-  
   .CreateCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
   .CreateCard input {
     margin-bottom: 10px;
     padding: 10px;
     font-size: 16px;
   }
-  
   .create-buttons {
     display: flex;
     align-items: center;
@@ -56,19 +49,14 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    background-color: #f8f8f8;
+    background-color: #F8F8F8;
     box-shadow: 0 2px 4px #0000001a;
     cursor: pointer;
     transition: background-color .3s;
-
-
-    
   }
-  
   .CreateCard button:hover {
-    background-color: #0056b3;
+    background-color: #0056B3;
   }
-
   .styled-input {
     margin-bottom: 10px;
     padding: 10px;
@@ -76,9 +64,4 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-<<<<<<< Updated upstream
   }
-  
-=======
-  }
->>>>>>> Stashed changes

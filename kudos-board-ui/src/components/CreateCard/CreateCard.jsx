@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./CreateCard.css";
+import axios from "axios";
+
 const CreateCard = ({ type, onSubmit }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [author, setAuthor] = useState("");
+//   const [author, setAuthor] = useState("");
   const [gifUrl, setGifUrl] = useState("");
   const handleOpenModal = () => {
     setIsOpen(true);
@@ -15,13 +17,15 @@ const CreateCard = ({ type, onSubmit }) => {
     setTitle("");
     setDescription("");
     setCategory("");
-    setAuthor("");
+    // setAuthor("");
     setGifUrl("");
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = { title, description, author, gifUrl, category };
-    onSubmit(data);
+    const data = { title, image : "https://picsum.photos/200/300", category };
+    //onSubmit(data);
+	const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}boards`, data);
+
     handleCloseModal();
   };
   return (
@@ -63,14 +67,14 @@ const CreateCard = ({ type, onSubmit }) => {
                     <option value="Inspiration">Inspiration</option>
                   </select>
                 )}
-                <input
+                {/* <input
                   type="text"
                   value={author}
                   onChange={(e) => setAuthor(e.target.value)}
                   placeholder={type === "board" ? "Author" : "Owner"}
                   required
                   className="styled-input"
-                />
+                /> */}
                 {type !== "board" && (
                   <>
                     <input
@@ -88,8 +92,6 @@ const CreateCard = ({ type, onSubmit }) => {
                       placeholder="Search for a gif..."
                       className="styled-input"
                     />
-		
-               
                   </>
                 )}
                 <button type="submit" className="create-card-button">
@@ -104,3 +106,7 @@ const CreateCard = ({ type, onSubmit }) => {
   );
 };
 export default CreateCard;
+
+
+
+
