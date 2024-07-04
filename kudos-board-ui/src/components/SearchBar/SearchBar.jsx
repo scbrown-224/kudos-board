@@ -4,14 +4,13 @@
 
 // //
 
-
 // const SearchBar = () => {
 
 //   const [searchTerm, setSearchTerm] = useState(""); // set the useState to null by default
 //   const [searchResults, setSearchResults] = useState([]);
-  
+
 //   const handleSearchSubmit = async (event) => {
-//     event.preventDefault(); 
+//     event.preventDefault();
 //     const submittedData = event.target.elements.searchInput.value;
 //     setSearchTerm(submittedData);
 
@@ -25,13 +24,11 @@
 
 //   };
 
-
-
 //   return (
 //     <>
 //       <div className="search-bar">
 
-// {/* //searching through the different posted boards 
+// {/* //searching through the different posted boards
 // //put board not found if no board is available */}
 // <form onSubmit={handleSearchSubmit}>
 //             <input
@@ -67,26 +64,26 @@ import React, { useState } from "react";
 import "../SearchBar/SearchBar.css";
 
 const SearchBar = ({ handleSearchSubmit }) => {
-    const [searchInput, setSearchInput] = useState("");
+	const [searchInput, setSearchInput] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        handleSearchSubmit(searchInput);
-    };
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		handleSearchSubmit(searchInput);
+	};
 
-    return (
-        <div className="search-bar">
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={searchInput}
-                    onChange={(e) => setSearchInput(e.target.value)}
-                    placeholder="Search Boards "
-                />
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    );
+	return (
+		<div className="search-bar">
+			<form onSubmit={handleSubmit}>
+				<input
+					type="text"
+					value={searchInput}
+					onChange={(e) => setSearchInput(e.target.value)}
+					placeholder="Search Boards "
+				/>
+				<button type="submit">Search</button>
+			</form>
+		</div>
+	);
 };
 
 export default SearchBar;
