@@ -1,61 +1,67 @@
 .modal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1000; /* Ensure modal is on top of other content */
-}
-
-.modal-content {
-	background: #ccd5ae;
-	padding: 20px;
-	border-radius: 5px;
-	position: relative;
-	max-width: 500px;
-	width: 90%;
-}
-
-.modal-header {
-	display: flex;
-	justify-content: flex-end;
-}
-
-.modal-close {
-	background: none;
-	border: none;
-	font-size: 24px;
-	cursor: pointer;
-}
-
-.modal-body {
-	margin-top: 20px;
-}
-
-.CreateCard {
-	display: flex;
-	flex-direction: column;
-}
-
-.CreateCard input {
-	margin-bottom: 10px;
-	padding: 10px;
-	font-size: 16px;
-}
-
-.CreateCard button {
-	padding: 10px;
-	font-size: 16px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	cursor: pointer;
-}
-
-.CreateCard button:hover {
-	background-color: #0056b3;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is on top of other content */
+  }
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .modal-body {
+    margin-top: 20px;
+  }
+  .CreateCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .CreateCard input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .create-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F8F8F8;
+    box-shadow: 0 2px 4px #0000001a;
+    cursor: pointer;
+    transition: background-color .3s;
+  }
+  .CreateCard button:hover {
+    background-color: #0056B3;
+  }
+  .styled-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
