@@ -3,14 +3,14 @@ const boardModel = require("../models/boardModel");
 
 const getAllBoards = async (req, res) => {
     console.log("Received request to get all boards"); // Log for debugging
-    const { category, sort } = req.query;
+    const { category, sort, title } = req.query;
     let filter = {};
     let orderBy = [];
 
     if (category) {
         filter.category = {
-          equals: category, 
-          mode: 'insensitive'
+            equals: category,
+            mode: 'insensitive'
         };
     }
 
@@ -20,14 +20,22 @@ const getAllBoards = async (req, res) => {
         }
     }
 
+    if (title) {
+        filter.title = {
+            contains: title,
+            mode: 'insensitive'
+        };
+    }
+
     try {
         const boards = await boardModel.getAllBoards(filter, orderBy);
         res.status(200).json(boards);
     } catch (error) {
-        console.error("Error fetching boards:", error);  // Log the error for debugging
+        console.error("Error fetching boards:", error); // Log the error for debugging
         res.status(400).json({ error: error.message });
     }
 };
+
 
 
 //Function to get car by ID
