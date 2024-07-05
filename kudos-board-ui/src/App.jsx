@@ -15,6 +15,10 @@ function App() {
   const [activeCategory, setActiveCategory] = useState("");
   const [boards, setBoards] = useState([]);
 
+  // adding search again
+    const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   const fetchBoards = async () => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}boards`);
@@ -33,34 +37,48 @@ function App() {
   };
 
   return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <div className="App">
+                <CreateCard type="board" onSubmit={handleNewBoard} />
+                {/* <FilterBar setActiveCategory={setActiveCategory} />
+                <SearchBar /> */}
+                <BoardGrid boards={boards} />
+                <Footer />
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="/boards/:boardId"
+          element={<BoardDetail handleNewCard={handleNewCard} />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
+const BoardDetail = ({ handleNewCard }) => {
+  const { boardId } = useParams();
+  const boardIdInt = parseInt(boardId, 10);
+  const [newCard, setNewCard] = useState(null);
+
+  const handleCardCreation = (card) => {
+    handleNewCard(boardIdInt, card);
+    setNewCard(card); // Update the state to trigger the re-render in CardGrid
+  };
+
+  return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Header />
-                <div className="App">
-                  <CreateCard type="board" onSubmit={handleNewBoard} />
-                  <BoardGrid boards={boards} />
-                  <Footer />
-                </div>
-              </>
-            }
-          ></Route>
-          <Route
-            path="/boards/:boardId"
-            element={
-              <>
-                <h1>Cards</h1>
-                <CardGrid />
-                <CreateCard type="card" />
-              </>
-            }
-          ></Route>
-        </Routes>
-      </BrowserRouter>
+      <h1>Cards</h1>
+      <CardGrid boardId={boardIdInt} newCard={newCard} />
+      <CreateCard type="card" boardId={boardIdInt} onSubmit={handleCardCreation} />
     </>
   );
 }
