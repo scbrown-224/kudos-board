@@ -9,26 +9,26 @@ Deployed Application (optional): not deployed
 
 #### CORE FEATURES
 
-- [ X] **Home Page**
-  - [X ] Displays header, banner, search, board grid, and footer.
-  - [X ] Displays preview of all boards on initial page load.
-    - [ X] Boards previews should show an image/gif and board title.
-  - [X ] Users can click on a category (recent, celebration, thank you, inspiration) to filter the boards.
-    - [X ] Recent displays most recently created boards.
-    - [ X] Other categories display boards of that type.
-  - [ X] Users can search for a board by name.
-  - [X ] Users can click on a board to navigate to a new page containing that board.
-  - [ X] Users can create a new board.
-    - [ X] Boards should have a title, category, and author (optional).
-  - [ X] User can delete boards.
+- [X] **Home Page**
+  - [X] Displays header, banner, search, board grid, and footer.
+  - [X] Displays preview of all boards on initial page load.
+    - [X] Boards previews should show an image/gif and board title.
+  - [X] Users can click on a category (recent, celebration, thank you, inspiration) to filter the boards.
+    - [X] Recent displays most recently created boards.
+    - [X] Other categories display boards of that type.
+  - [ ] Users can search for a board by name.
+  - [X] Users can click on a board to navigate to a new page containing that board.
+  - [X] Users can create a new board.
+    - [X] Boards should have a title, category, and author (optional).
+  - [X] User can delete boards.
   
-- [ X] **Board Page**
-  - [X ] Displays a list of all cards for a board.
-    -  [X ] Each card features a text message.
+- [X] **Board Page**
+  - [X] Displays a list of all cards for a board.
+    -  [X] Each card features a text message.
     -  [ ] Each card features a gif found using the [GIPHY API](https://developers.giphy.com/docs/api/).
-    -  [X ] Users can optionally sign the card as the author.  
--   [ X] Cards can be upvoted.
--   [ X] Cards can be deleted.
+    -  [X] Users can optionally sign the card as the author.  
+-   [ ] Cards can be upvoted.
+-   [ ] Cards can be deleted.
 
 
 #### STRETCH FEATURES
@@ -49,9 +49,7 @@ Deployed Application (optional): not deployed
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+`<div style="position: relative; padding-bottom: 47.65625%; height: 0;"><iframe src="https://www.loom.com/embed/e50a17f4c9db4e19a33d3b3783ee0ccc?sid=6aeaf385-19a4-40c9-8356-8fa74191e183" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
 
 ### Reflection
 
@@ -73,4 +71,4 @@ I think the actual presentation, or public speaking aspect of the project went w
 
 ### Shout out
 
-SHOUT OUT TO THE WHOLE FTL GANGG
+SHOUT OUT TO THE WHOLE FTL COHORT
