@@ -20,6 +20,7 @@ model Board {
   category  String
   cards     Card[] 
   created_at DateTime  @default(now()) @db.Timestamptz()
+
 }
 
 model Card {
@@ -29,5 +30,6 @@ model Card {
   description  String
   board_id     Int
   board        Board  @relation(fields: [board_id], references: [board_id], onDelete: Cascade)
+  author string
 }
 
