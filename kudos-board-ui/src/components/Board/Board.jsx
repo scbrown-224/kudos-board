@@ -5,14 +5,6 @@ import Card from "../Card/Card";
 const Board = ({ boardId, title, category, boards, setBoards }) => {
 	const [cards, setCards] = useState([]);
 
-	const addCard = async (cardData) => {
-		try {
-			const response = await axios.post(`/boards/${boardId}/cards`, cardData);
-			setCards([...cards, response.data]);
-		} catch (error) {
-			console.error("Error adding card:", error);
-		}
-	};
 
 	const handleDeleteButtonClick = async () => {
 		//frontend
