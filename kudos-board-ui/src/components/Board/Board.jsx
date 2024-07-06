@@ -25,10 +25,14 @@ const Board = ({ boardId, title, category, boards, setBoards }) => {
 		await axios.delete(`http://localhost:3000/boards/${boardId}`);
 	};
 
+	const randomImage = `https://picsum.photos/200/300?random=${boardId}-${Math.floor(
+		Math.random() * 1000
+	)}`;
+
 	return (
 		<div>
 			<div className="boardCard">
-				<img src="https://picsum.photos/200/300"></img>
+				<img src={randomImage} alt={title}></img>
 				<h2>{title}</h2>
 				{/* <div className="card-grid">
 					{cards.map((card) => (

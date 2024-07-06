@@ -20,7 +20,11 @@
 	gap: 10px;
 	border: 5px;
 }
-
+.boardCard{
+	display: flex;
+	flex-direction: column;
+  	align-items: center;
+}
 .card {
 	padding: 15px;
 	border: 1px solid #ddd;
@@ -36,3 +40,14 @@
   align-items: center;
   color: #e9edc9;
 }
+
+ 
+.board-item button:hover {
+    background-color: #fefae0; /* Darker green */
+    transform: scale(1.05);
+  }
+  
+  .board-item button:active {
+    background-color: #3e8e41; /* Even darker green */
+    transform: scale(1);
+  }

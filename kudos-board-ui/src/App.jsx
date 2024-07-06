@@ -3,21 +3,14 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import FilterBar from "./components/FilterBar/FilterBar.jsx";
-import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import BoardGrid from "./components/BoardGrid/BoardGrid.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import CardGrid from "./components/CardGrid/CardGrid.jsx";
 import CreateCard from "./components/CreateCard/CreateCard.jsx";
 import axios from "axios";
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState("");
   const [boards, setBoards] = useState([]);
-
-  // adding search again
-    const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   const fetchBoards = async () => {
     try {
@@ -36,6 +29,13 @@ function App() {
     setBoards((prevBoards) => [...prevBoards, newBoard]);
   };
 
+  // Define handleNewCard function here
+  const handleNewCard = (boardId, newCard) => {
+    // Logic to handle new card creation
+    console.log(`Handling new card creation for board ${boardId}:`, newCard);
+    // You can implement logic to update state or perform other actions
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -46,8 +46,6 @@ function App() {
               <Header />
               <div className="App">
                 <CreateCard type="board" onSubmit={handleNewBoard} />
-                {/* <FilterBar setActiveCategory={setActiveCategory} />
-                <SearchBar /> */}
                 <BoardGrid boards={boards} />
                 <Footer />
               </div>
@@ -62,7 +60,6 @@ function App() {
     </BrowserRouter>
   );
 }
-
 
 const BoardDetail = ({ handleNewCard }) => {
   const { boardId } = useParams();
@@ -81,7 +78,6 @@ const BoardDetail = ({ handleNewCard }) => {
       <CreateCard type="card" boardId={boardIdInt} onSubmit={handleCardCreation} />
     </>
   );
-}
+};
 
 export default App;
-

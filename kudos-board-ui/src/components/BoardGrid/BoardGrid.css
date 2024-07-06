@@ -77,7 +77,21 @@
 	align-items: center;
 }
 
+/* 
+.board-grid-container {
+	padding: 20px;
+}
 
+.board-grid-container h1 {
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+
+.board-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+} */
 
 .search-bar {
 	display: flex;
@@ -86,12 +100,11 @@
 }
 
 .search-bar input {
-	width: 1000px;
+	width: auto;
 	height: auto;
 	font-size: 16px;
 	border: 1px solid #fefae0;
 	border-radius: 5px;
 }
-
 
 

@@ -7,7 +7,7 @@ import { useParams } from "react-router";
 const CardGrid = () => {
 	const [cards, setCards] = useState([]);
 	const { boardId } = useParams();
-
+	const dataUrl = "http://localhost:3000/"; 
 	console.log('here');
 
 	useEffect(() => {
@@ -24,8 +24,12 @@ const CardGrid = () => {
 			}
 		};
 
-		fetchCards();
-	}, []);
+    if (boardId) {
+      fetchCards();
+    }
+  }, [boardId]);
+
+  
 
 	return (
 		<div className="card-grid-container">
@@ -33,9 +37,14 @@ const CardGrid = () => {
 				{cards.map((card, index) => (
 					<div key={index} className="card-item">
 						<Card
+							cardId={card.card_id}
 							title={card.title}
 							description={card.description}
+							boardId={card.board_id}
+							gifUrl={card.gif}
+							author={card.author}
 							card={card}
+							
               setCards={setCards}
               
 						/>

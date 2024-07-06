@@ -1,19 +1,35 @@
-import { useState } from "react";
 import React from "react";
-import "./Card.css"; // Importing the CSS file for CardModal component
+import "./Card.css"; // Importing the CSS file for Card component
+import axios from "axios";
 
 // Functional component to display individual card information
-const CardModal = ({ card, onDelete, onUpvote }) => {
-	return (
-		<div className="CardModal">
-			<h3>{card.title}</h3>
-			<p>{card.description}</p>
-			{card.author && <p>By {card.author}</p>}
-			<img src={card.gifUrl} alt="gif" />
-			<button onClick={onUpvote}>Upvote ({card.upvotes})</button>
-			<button onClick={onDelete}>Delete</button>
-		</div>
-	);
+const Card = ({ cardId, title, description, gifUrl, author, setCards,upvotes,onUpvote }) => {
+
+  const handleDeleteButtonClick = async () => {
+    try {
+
+      setCards(prevCards => prevCards.filter(card => card.card_id !== cardId));
+
+
+      await axios.delete(`http://localhost:3000/cards/${cardId}`);
+    } catch (error) {
+      console.error("Error deleting card:", error);
+    }
+  };
+
+ 
+
+
+  return (
+    <div className="CardModal">
+      <h3>{title}</h3>
+      <p>{description}</p>
+      {author && <p>By {author}</p>}
+      {gifUrl && <img src={gifUrl} alt="GIF" />} 
+      <button onClick={handleDeleteButtonClick}>Delete</button>
+      <button onClick={onUpvote}>Upvote ({upvotes})</button>
+    </div>
+  );
 };
 
-export default CardModal; // Exporting the CardModal component as default
+export default Card; // Exporting the Card component as default
