@@ -1,4 +1,5 @@
 const { PrismaClient } = require("@prisma/client");
+// const { getCardsByBoardId } = require("../controllers/cardController");
 const prisma = new PrismaClient();
 
 // Function to get all boards with optional filter
@@ -29,11 +30,17 @@ const deleteCard = async (card_id) => {
     return prisma.card.delete({ where: { card_id: parseInt(card_id) } });
   };
   
+  const getCardsByBoardId = async (boardId) => {
+    return prisma.card.findMany({
+        where: {board_id: parseInt(boardId)}
+    });
+};
 
 module.exports = {
     getAllCards,
     getCardById, 
     createCard, 
     updateCard, 
-    deleteCard
+    deleteCard, 
+    getCardsByBoardId
 };
