@@ -16,7 +16,7 @@ Deployed Application (optional): not deployed
   - [X] Users can click on a category (recent, celebration, thank you, inspiration) to filter the boards.
     - [X] Recent displays most recently created boards.
     - [X] Other categories display boards of that type.
-  - [ ] Users can search for a board by name.
+  - [X ] Users can search for a board by name.
   - [X] Users can click on a board to navigate to a new page containing that board.
   - [X] Users can create a new board.
     - [X] Boards should have a title, category, and author (optional).
@@ -25,10 +25,10 @@ Deployed Application (optional): not deployed
 - [X] **Board Page**
   - [X] Displays a list of all cards for a board.
     -  [X] Each card features a text message.
-    -  [ ] Each card features a gif found using the [GIPHY API](https://developers.giphy.com/docs/api/).
+    -  [X ] Each card features a gif found using the [GIPHY API](https://developers.giphy.com/docs/api/).
     -  [X] Users can optionally sign the card as the author.  
 -   [ ] Cards can be upvoted.
--   [ ] Cards can be deleted.
+-   [ X] Cards can be deleted.
 
 
 #### STRETCH FEATURES
@@ -49,8 +49,14 @@ Deployed Application (optional): not deployed
 
 ### Walkthrough Video
 
-`<div style="position: relative; padding-bottom: 47.65625%; height: 0;"><iframe src="https://www.loom.com/embed/e50a17f4c9db4e19a33d3b3783ee0ccc?sid=6aeaf385-19a4-40c9-8356-8fa74191e183" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
-
+<div>
+    <a href="https://www.loom.com/share/6d428bdfced54f53a48e3923388a754f">
+      <p>KudoBoard - 5 July 2024 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/6d428bdfced54f53a48e3923388a754f">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/6d428bdfced54f53a48e3923388a754f-with-play.gif">
+    </a>
+  </div>
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
