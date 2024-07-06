@@ -156,7 +156,7 @@ const CreateCard = ({ type, onSubmit }) => {
 
   const handleCardSubmit = async (e) => {
     e.preventDefault();
-    const cardData = { title, board,description, gif: gifUrl };
+    const cardData = { title, description, gif: gifUrl, board_id: boardId };
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}cards`, cardData);
       onSubmit(response.data); // Pass the newly created card data to the parent component
@@ -165,6 +165,7 @@ const CreateCard = ({ type, onSubmit }) => {
       console.error("Error creating card:", error);
     }
   };
+  
 
   return (
     <>

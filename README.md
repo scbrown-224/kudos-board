@@ -1,7 +1,7 @@
 # kudos-board
 ## Unit Assignment: Kudos Board
 
-Submitted by: **NAME**
+Submitted by: **Jazlyn Jones, Sydney Brown, Roxana Cruz**
 
 Deployed Application (optional): not deployed
 

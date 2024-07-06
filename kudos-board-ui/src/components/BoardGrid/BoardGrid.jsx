@@ -109,8 +109,3 @@ export default BoardGrid;
 // };
 
 // export default BoardGrid;
-
-
-
-
-
